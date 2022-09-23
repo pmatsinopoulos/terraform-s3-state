@@ -1,4 +1,11 @@
 terraform {
+  backend "s3" {
+    bucket         = "pmatsinopoulos-terraform-test"
+    dynamodb_table = "pmatsinopoulos-terraform-test"
+    key            = "test_terraform_state"
+    profile        = "me"
+    region         = "eu-west-2"
+  }
   required_providers {
     aws = {
       source  = "hashicorp/aws"
